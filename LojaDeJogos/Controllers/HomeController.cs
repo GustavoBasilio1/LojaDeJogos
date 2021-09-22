@@ -15,10 +15,5 @@ namespace LojaDeJogos.Controllers
         }
 
 
-
-    
-
-
-
     }
 }

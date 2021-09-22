@@ -1,53 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LojaDeJogos.Models;
-using System.ComponentModel.DataAnnotations;
-
 
 namespace LojaDeJogos.Models
 {
     public class Jogos
     {
-        [Required(ErrorMessage = "O código é obrigatório")]
-        [Display(Name = "Código")]
-        public int Codigo { get; set; }
+        [Display(Name = "Código do jogo")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
+        public string JogoID { get; set; }
 
-
-        [Required(ErrorMessage = "O nome é obrigatório")]
+        [Display(Name = "Nome")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
         public string Nome { get; set; }
 
-
         [Display(Name = "Versão")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
         public string Versao { get; set; }
 
-
-        [Required(ErrorMessage = "O desenvolvedor é obrigatório")]
+        [Display(Name = "Desenvolvedor do jogo")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
         public string Desenvolvedor { get; set; }
 
-
-        [Required(ErrorMessage = "O gênero é obrigatório")]
-        [Display(Name = "Gênero")]
+        [Display(Name = "Gênero do jogo")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
         public string Genero { get; set; }
 
-
-        [Required(ErrorMessage = "A faixa etária é obrigatória")]
         [Display(Name = "Faixa etária")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
         public string FaixaEtaria { get; set; }
 
-
-        [Required(ErrorMessage = "A plataforma é obrigatória")]
+        [Display(Name = "Plataforma do jogo")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
         public string Plataforma { get; set; }
 
-
-        [Required(ErrorMessage = "O ano de lançamento é obrigatório")]
         [Display(Name = "Ano de lançamento")]
-        public string AnoLanc { get; set; }
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? AnoLanc { get; set; }
 
-
-        [Required(ErrorMessage = "A sinopse é obrigatório")]
+        [Display(Name = "Sinopse do jogo")]
+        [Required(ErrorMessage = "preenchimento do campo obrigatório")]
         public string Sinopse { get; set; }
+
+        
     }
 }
